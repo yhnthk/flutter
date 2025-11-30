@@ -10,6 +10,7 @@ class UserModel {
     required this.username,
     required this.email,
   });
+  //method untuk convert json ke usermodel
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
       id: json['id'], 

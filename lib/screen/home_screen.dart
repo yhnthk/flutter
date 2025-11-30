@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/models/user_model.dart';
-import 'package:flutter_application_4/service/api_service.dart';
+import 'package:flutter_application_4/screen/switch_screen.dart';
+import 'package:flutter_application_4/repository/api_service.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -32,10 +34,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 return ListTile(
                   title: Text("${user.name} | ${user.username}"),
                   subtitle: Text(user.email),
-                  );
+                );
               },
             );
           }
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.arrow_right),
+        onPressed: () {
+          Navigator.of(
+            context,
+          ).push(CupertinoPageRoute(builder: (context) => SwitchScreen()));
         },
       ),
     );
